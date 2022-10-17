@@ -1,6 +1,6 @@
 #include<unistd.h>
 /**
- * Main - prints the standard error sandwiched around the standard output
+ * main - prints the standard error sandwiched around the standard output
  *
  * Return: returns 1
  */
