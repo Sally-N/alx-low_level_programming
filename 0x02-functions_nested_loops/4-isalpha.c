@@ -3,8 +3,8 @@
 /**
  * _isalpha - check for alphabet char
  *
- * @c: check for letter uppercase or lowercase based on c
- * Returns: success 1
+ * @c: check for letter uppercase or lowercase based on condition
+ * Return: success 1
  */
 
 int _isalpha(int c)
