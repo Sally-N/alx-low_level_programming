@@ -3,7 +3,7 @@
 /**
  * _islower - checks for lowercase char
  *
- * Description: returns based on c
+ * @c: returns based on int c
  * Return: Success 0
  */
 
