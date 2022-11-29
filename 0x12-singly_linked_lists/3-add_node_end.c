@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 #include "lists.h"
 
@@ -26,7 +25,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	for (i = 0; str[i]; i++)
 		;
-	
+
 	if (*head == NULL)
 	{
 		*head = new;
