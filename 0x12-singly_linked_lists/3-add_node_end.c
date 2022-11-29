@@ -5,7 +5,8 @@
 /**
  * add_node_end - function that adds a new node at the end of a list_t list
  * @head: Const double pointer of structure list_t for beginning
- * @str: Const char pointer for data to be added
+ * @str: string to put in the new node
+ *
  * Return: List with new node for list_t list, NULL if failed
  */
 
