@@ -1,7 +1,6 @@
 #ifndef _LISTS_
 #define _LISTS_
 
-
 /** struct listint_s - singly linked list
  * @n: integer
  * @next: points to the next node
@@ -21,6 +20,7 @@ typedef struct listint_s
  *
  * Description: singly linked list of pointers
  */
+
 typedef struct listp_s
 {
 	void *p;
