@@ -9,11 +9,12 @@
 
 size_t listint_len(const listint_t *h)
 {
+	const listint_t *pointer = h;
 	size_t num = 0;
 
-	while(h != NULL)
+	while(pointer != NULL)
 	{
-		h = h->next;
+		pointer = pointer->next;
 		num += 1;
 	}
 	return(num);
