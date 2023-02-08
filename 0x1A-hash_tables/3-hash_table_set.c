@@ -1,52 +1,51 @@
-#include "hash_tables.h"
 #include <stdlib.h>
+#include <string.h>
+#include "hash_tables.h"
 
 /**
- * hash_table_set - Add or update an element in a hash table.
- * @ht: A pointer to the hash table.
- * @key: The key to add - cannot be an empty string.
- * @value: The value associated with key.
+ * hash_table_set - inserts an element to the hash table.
  *
- * Return: Upon failure - 0. Otherwise - 1.
+ * @ht: the hash table to insert element.
+ * @key: key associated with the element.
+ * @value: data associated with the element.
+ * Return: 1 on success, 0 on failure.
  */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	char *val;
-	hash_node_t *node;
-	unsigned long int index;
-	hash_node_t *tmp;
+	unsigned long int hashIndex;
+	char *value_copy;
+	hash_node_t *element;
 
-	val = strdup(value);
-	if (val == NULL)
+	if (ht == NULL || strlen(key) == 0 || strlen(value) == 0)
 		return (0);
-	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+
+	value_copy = strdup(value);
+	if (value_copy == NULL)
 		return (0);
-	index = key_index((const unsigned char *)key, ht->size);
-	tmp = ht->array[index];
-	while (tmp != NULL)
+
+	hashIndex = key_index((const unsigned char *)key, ht->size);
+
+	while (ht->array[hashIndex])
 	{
-		if (strcmp(key, tmp->key) == 0)
-		{
-			free(tmp->value);
-			tmp->value = val;
-			return (1);
-		}
-		tmp = tmp->next;
+		++hashIndex;
+
+		hashIndex %= ht->size;
 	}
 
-	/* add node */
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
+	element = malloc(sizeof(hash_node_t));
+	if (element == NULL)
 		return (0);
-	node->key = strdup(key);
-	if (node->key == NULL)
+
+	element->key = strdup(key);
+	if (element->key == NULL)
 	{
-		free(node);
+		free(element);
 		return (0);
 	}
-	node->value = val;
-	node->next = ht->array[index];
-	ht->array[index] = node;
+	element->value = value_copy;
+	element->next = ht->array[hashIndex];
+	ht->array[hashIndex] = element;
 
 	return (1);
 }
