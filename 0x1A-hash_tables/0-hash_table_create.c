@@ -3,7 +3,7 @@
 
 /**
  * hash_table_create - function to create a hash table
- * @size: size f the array
+ * @size: size of the array
  * Return: pointer to the hashable on success, NULL otherwise
  */
 hash_table_t *hash_table_create(unsigned long int size)
@@ -11,7 +11,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	unsigned long int i;
 	hash_table_t *hasht = malloc(sizeof(hash_table_t));
 
-	if (ht == NULL)
+	if (hasht == NULL)
 		return (NULL);
 
 	hasht->size = size;
