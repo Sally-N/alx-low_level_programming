@@ -3,11 +3,13 @@
 
 
 def island_perimeter(grid):
-    """Return the perimeter of an island described in grid"""
+    """Return the perimeter of an island"""
     perimeter = 0
     totalrows = len(grid)
     totalcols = len(grid[0])
-    if row <= 100 and col <= 100:
+    intersections = 0
+
+    if totalrows <= 100 and totalcols <= 100:
         for i in range(totalrows):
             for j in range(totalcols):
                 if grid[i][j] == 1:
