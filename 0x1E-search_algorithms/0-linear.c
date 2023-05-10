@@ -10,7 +10,7 @@
  * @size: number of elements in array.
  * @value: value to search for. 
  * Return: first index where value is located
- * -1 if array is NULL or value does not exist in array.
+ * 	-1 if array is NULL or value does not exist in array.
  */
 
 int linear_search(int *array, size_t size, int value)
