@@ -6,10 +6,10 @@
 /**
  * linear_search - function that searches for a value in an array of integers.
  *
- * @array: pointer to the first element of the array to search in.
- * @size: number of elements in array.
- * @value: value to search for. 
- * Return: index where value is located if it exists in array
+ * @array: a pointer to the first element of the array to search in.
+ * @size: the number of elements in array.
+ * @value: the value to search for. 
+ * Return: index of item if it exists in array
  * 	   -1 if value is not present in array or array is NULL.
  */
 int linear_search(int *array, size_t size, int value)
