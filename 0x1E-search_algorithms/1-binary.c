@@ -36,10 +36,12 @@ int binary_search(int *array, size_t size, int value)
 		else if (array[m] > value)
 		{
 			r = m - 1;
+			return (binary_search(int *array, size_t size, int value));
 		}
 		else
 		{
 			l = m + 1;
+			return (binary_search(int *array, size_t size, int value));
 		}		
 	}
 	return (-1);
