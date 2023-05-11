@@ -12,6 +12,7 @@
  * Return: index of item if it exists in array
  * 	   -1 if value is not present in array or array is NULL.
  */
+
 int linear_search(int *array, size_t size, int value)
 {
 	size_t i;
@@ -19,7 +20,8 @@ int linear_search(int *array, size_t size, int value)
 	if (array == NULL)
 	{
 		return (-1);
-	}	
+	}
+
 	for (i = 0; i < size; i++)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
